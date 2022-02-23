@@ -17,12 +17,14 @@ var getRepoIssues = function (repo) {
 };
 getRepoIssues("facebook/react");
 
-if (issues.length === 0) {
-    issueContainerEl.textContent = "This repo has no open issues!";
-    return;
-  }
 
 var displayIssues = function (issues) {
+
+    if (issues.length === 0) {
+        issueContainerEl.textContent = "This repo has no open issues!";
+        return;
+      }
+    
     for (var i = 0; i < issues.length; i++) {
         // create a link element to take users to the issue on github
         var issueEl = document.createElement("a");
